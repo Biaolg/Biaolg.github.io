@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>model</title>
+
+    <!-- Bootstrap -->
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="http://fonts.googleapis.com/css?family=Srisakdi:400,700&amp;subset=latin-ext,thai,vietnamese"
+        rel="stylesheet" />
+    <link
+        href="http://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext"
+        rel="stylesheet" />
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="box">
+        <!-- 导航层 -->
+        <nav id="mynavbar" class="navbar navbar-default vnavbar">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span>Menu</span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Models</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav navbar-right text-center vvnav">
+                        <li><a href="index.html" class="actives">Home</a></li>
+                        <li data-index="AboutUs"><a href="#">About Us</a></li>
+                        <li data-index="Gallery"><a href="#">Gallery</a></li>
+                        <li class="dropdown text-center">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-haspopup="true" aria-expanded="false">Dropdown <span
+                                    class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-left">
+                                <li data-index="Services"><a href="#">Services</a></li>
+                                <li data-index="Blog"><a href="#">Blog</a></li>
+                                <li data-index="Newsletter"><a href="#">Newsletter</a></li>
+                            </ul>
+                        </li>
+                        <li data-index="ContactUs"><a href="#">Contact Us</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
+        <!-- 轮播 -->
+
+        <div id="carousel-example-generic" class="carousel slide vbanner" data-ride="carousel" data-interval="300000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <img src="./assets/images/1.jpg" alt="...">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 col-md-offset-6">
+                                    <h3>The easier way to find models</h3>
+                                    <p>Discover Models or Be </br>Discovered</p>
+                                    <div data-index="ContactUs" id="contactvv">
+                                        <a class="btn btn-default" href="#" role="button">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/2.jpg" alt="...">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 col-md-offset-6">
+                                    <h3>The easier way to find models</h3>
+                                    <p>Discover Models or Be </br>Discovered</p>
+                                    <div data-index="ContactUs" id="contactvv">
+                                        <a class="btn btn-default" href="#" role="button">Contact Us</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="./assets/images/4.jpg" alt="...">
+                    <div class="carousel-caption">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 col-md-offset-6">
+                                    <h3>The easier way to find models</h3>
+                                    <p>Discover Models or Be </br>Discovered</p>
+                                    <div data-index="ContactUs" id="contactvv">
+                                        <a class="btn btn-default" href="#" role="button">Contact Us</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- welcome -->
+        <div id="AboutUs" class="vwelcome">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <h3> Welcome To Our Models </br>Website </h3>
+                        <h4>Together we’ll make this world </br>more beautiful.</h4>
+
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <span class="glyphicon glyphicon-text-color"></span>
+                                <h5>Make Over</h5>
+                                <p>Ut enim ad minima ven aiam, quis no strum ullam corp oris susc ipit.</p>
+                            </div>
+                            <div class="col-xs-6">
+                                <span class="glyphicon glyphicon-star-empty"></span>
+                                <h5>Stylist</h5>
+                                <p>Ut enim ad minima ven aiam, quis no strum ullam corp oris susc ipit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <img src="./assets/images/img.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- vserives -->
+        <div id="Services" class="vserives">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+                        <h4>Heading Here</h4>
+                        <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+                        <h4>Heading Here</h4>
+                        <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
+                        <h4>Heading Here</h4>
+                        <p>Ut enim ad minima veniam, quis nostrum ullam corporis suscipit laboriosam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- vblog -->
+        <div id="Blog" class="vblog">
+            <div class="container">
+                <div class="title text-center">
+                    <h3>Blog Posts</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud ullam.</p>
+                </div>
+
+                <div class="row girls">
+                    <div class="col-md-4">
+                        <div class="vtop">
+                            <a href="">
+                                <img src="./assets/images/blog1.jpg" alt="">
+                            </a>
+                            <h3>13
+                                <span>Sep</span>
+                            </h3>
+                        </div>
+                        <div class="vbottom">
+                            <h4>Sit accus antium</h4>
+                            <ul>
+                                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>20 Likes</li>
+                                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>48 Comments
+                                </li>
+                            </ul>
+                            <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="vtop">
+                            <a href="">
+                                <img src="./assets/images/blog2.jpg" alt="">
+                            </a>
+                            <h3>16
+                                <span>Sep</span>
+                            </h3>
+                        </div>
+                        <div class="vbottom">
+                            <h4>Sit accus antium</h4>
+                            <ul>
+                                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>20 Likes</li>
+                                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>48 Comments
+                                </li>
+                            </ul>
+                            <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="vtop">
+                            <a href="">
+                                <img src="./assets/images/blog3.jpg" alt="">
+                            </a>
+                            <h3>20
+                                <span>Sep</span>
+                            </h3>
+                        </div>
+                        <div class="vbottom">
+                            <h4>Sit accus antium</h4>
+                            <ul>
+                                <li><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>20 Likes</li>
+                                <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>48 Comments
+                                </li>
+                            </ul>
+                            <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- vjumu -->
+        <div class="vjumu">
+            <div class="container">
+                <div class="row vtext">
+                    <div class="col-md-5 col-lg-7 acol">
+                        <span>FASHION LOOK</span>
+                        <h3>Creating Your Beauty Image</h3>
+                        <p>Donec consequat sapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus at</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- vgallery -->
+        <div id="Gallery" class="vgallery">
+            <div class="container">
+                <div class="title text-center">
+                    <h3>Our Gallery</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud ullam.</p>
+                </div>
+                <div class="girlpic text-center">
+                    <div class="row vgirlone">
+                        <div class="col-sm-4">
+                            <a href="#gal1">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#myModal" data-vpic="g1">
+                                    <img src="./assets/images/g1.jpg" alt="">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#gal2">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#myModal">
+                                    <img src="./assets/images/g2.jpg" alt="">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#gal3">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#myModal">
+                                    <img src="./assets/images/g3.jpg" alt="">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row vgirltwo">
+                        <div class="col-sm-4">
+                            <a href="#gal4">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#myModal">
+                                    <img src="./assets/images/g4.jpg" alt="">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#gal5">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#myModal">
+                                    <img src="./assets/images/g5.jpg" alt="">
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
+                            <a href="#gal6">
+                                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal"
+                                    data-target="#myModal">
+                                    <img src="./assets/images/g6.jpg" alt="">
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- vphoto -->
+        <div class="modal vphoto" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content text-center">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="./assets/images/g1.jpg" alt="">
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <!-- vNewsletter -->
+        <div id="Newsletter" class="vnewsletter">
+            <div class="container vcon">
+                <div class="title text-center">
+                    <h3>Our Newsletter</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud ullam.</p>
+                </div>
+                <div class="nes">
+                    <form action="#" method="post">
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <input type="text" class="form-control" placeholder="Name" required>
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <input type="email" class="form-control" placeholder=" Email Address" required>
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <input type="submit" class="form-control submit text-uppercase" value="Subscribe"
+                                    required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- vconcat -->
+        <div id="ContactUs" class="vconcat">
+            <div class="container vcont">
+                <div class="title text-center">
+                    <h3>Contact Us</h3>
+                    <p>Ut enim ad minim veniam, quis nostrud ullam.</p>
+                </div>
+                <div class="row vaddree">
+                    <div class="col-md-6">
+                        <div class="vadd winfo">
+                            <h4>Address</h4>
+                            <p>123 San Sebastian, Hill Towers 4567 New York City USA.</p>
+                        </div>
+                        <div class="vphone winfo">
+                            <h4>Phone</h4>
+                            <p>+222 111 333 4444</p>
+                            <p>+222 111 333 5555</p>
+                        </div>
+                        <div class="vmail winfo">
+                            <h4>Mail</h4>
+                            <p> <a href="">Mail1@example.com</a></p>
+                            <p> <a href="">Mail2@example.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="vget winfo">
+                            <h4>Get In Touch</h4>
+                            <form action="#" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Subject" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea type="text" class="form-control" placeholder="Message"
+                                        required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="vfoot">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-xs-6 vcol">
+                        <h3>WHO WE ARE</h3>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                            laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                    </div>
+                    <div class="col-md-3 col-xs-6 vcol">
+                        <h3>LATEST NEWS</h3>
+                        <div>
+                            <h4>Sed ut piciatis unde</h4>
+                            <p>30 Sep 2018</p>
+                        </div>
+                        <div>
+                            <h4>Modi tempra incunt</h4>
+                            <p>02 Aug 2018</p>
+                        </div>
+                        <div>
+                            <h4>ullam corpis sucipit</h4>
+                            <p>06 Aug 2018</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6 vcol">
+                        <h3>CONTACT US</h3>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+121 098 8907 9987</p>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>
+                                <a href="mailto:info@example.com">info@example.com</a>
+                            </p>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Honey Avenue, New York City</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-xs-6 vcol vlight">
+                        <h3>Quick Links</h3>
+                        <p><a href="">Home</a></p>
+                        <p><a href="">About Us</a></p>
+                        <p><a href="">Blog</a></p>
+                        <p><a href="">Gallery</a></p>
+                        <p><a href="">Contact Us</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="vbottom"></div>
+        </div>
+
+
+
+    </div>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="./assets/js/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

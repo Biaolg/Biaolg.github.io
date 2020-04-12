@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+.app {
+  font-size: 0.2rem;
+  overflow: hidden;
+  background: url(../img/tiank.jpg);
+  background-size: 100%;
+}
+.app .top {
+  margin-top: 0.1rem;
+  padding: 0.1rem;
+  width: 100%;
+  font-weight: 700;
+}
+.app .bottom {
+  margin-top: 1.4rem;
+  background-image: linear-gradient(transparent, #ffffff);
+}
+.app .b-top {
+  padding: 0.1rem;
+  color: white;
+}
+.app .b-top .temp {
+  font-size: 0.8rem;
+  display: inline-block;
+}
+.app .b-top .weather {
+  display: inline-block;
+  margin-left: -0.35rem;
+  font-weight: 700;
+}
+.app .b-zhong {
+  margin-left: 0px;
+  overflow: hidden;
+  width: 24rem;
+  font-size: 0.16rem;
+}
+.app .b-zhong .shi {
+  color: #aaa;
+  font-size: 0.14rem;
+}
+.app .b-zhong > div {
+  float: left;
+  width: 1rem;
+  height: 0.4rem;
+  text-align: center;
+}
+.app .day {
+  padding: 0.1rem;
+  line-height: 0.3rem;
+  font-size: 0.16rem;
+}
+.app .day div {
+  float: left;
+}
+.app .day li {
+  margin-top: 0.1rem;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.app .day .end {
+  margin-right: 0;
+  float: right;
+}
+.app .day .tq {
+  margin: 0;
+  width: 1.9rem;
+  text-align: center;
+  font-size: 0.1rem;
+  color: #04b8ff;
+}
+.app .day span > span {
+  color: #aaa;
+}

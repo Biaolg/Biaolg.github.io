@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .Make {
+            background: rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+
+        .Make #sl {
+            position: fixed;
+            top: -200px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block;
+            width: 300px;
+            height: 30px;
+            margin: auto;
+        }
+
+        .game-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 600px;
+            height: 630px;
+            margin: auto;
+            display: none;
+        }
+
+        .btn {
+            /* width: 200px; */
+            margin: 0 auto;
+        }
+
+        .game {
+            width: 600px;
+            height: 600px;
+        }
+
+        .game div {
+            position: absolute;
+            border: solid 1px red;
+            background-image: url(img/vf.jpg);
+        }
+
+        .game-box .game .hide {
+            background: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Make">
+        <select id="sl">
+            <option>选择难度</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+        </select>
+    </div>
+
+    <div class="game-box">
+        <div class="game">
+        </div>
+
+        <div class='btn'>
+            <button>开始</button>
+            <button>选择难度</button>
+        </div>
+
+    </div>
+    <script>
+
+        window.onload = function () {
+
+            class JigsawPuzzle {
+                constructor(id, n) {
+                    this.id = document.querySelector(id);
+                    this.n = n;
+                    this.divArr = [];
+                    this.size;
+                    this.theOn;//前一次点击元素
+                    this.second = 0;//累计点击次数
+                    this.hide;//空白元素
+                    this.pos = [];//通关条件
+                }
+                Initialization() {//创建
+                    var id = this.id;
+                    var n = this.n;
+
+                    id.innerHTML = '';
+
+                    var size = id.offsetWidth / n;
+
+                    for (var i = 0; i < n; i++) {
+                        for (var j = 0; j < n; j++) {
+                            var New = document.createElement('div');
+
+                            New.style.width = size + 'px';
+                            New.style.height = size + 'px';
+
+                            New.style.top = i * size + 'px';
+                            New.style.left = j * size + 'px';
+
+                            New.style.backgroundPosition = `-${j * size}px -${i * size}px`;
+
+                            this.pos.push(New.style.top + New.style.left);
+                            this.divArr.push(New);
+                            id.appendChild(New);
+                        }
+                    }
+                    //设置hide的默认值
+                    this.hide = this.divArr[0];
+                    this.size = size;
+                }
+                getRandom() {//随机数
+                    return Math.floor(Math.random() * this.n);
+                }
+                arrangement() {//排布
+                    this.hide.className = '';
+                    var divArr = this.divArr;
+                    var pos = [];
+
+                    for (var i = 0; i < divArr.length; i++) {
+                        pos.push(divArr[i].style.top + ',' + divArr[i].style.left);
+                    }
+
+                    var copPos = pos.concat();
+
+                    copPos.sort(function () {//随机排序
+                        return Math.random() - 0.5;
+                    })
+
+                    for (var i = 0; i < divArr.length; i++) {
+                        var get = copPos[i].split(',');
+                        divArr[i].style.transition = '';
+                        divArr[i].style.top = get[0];
+                        divArr[i].style.left = get[1];
+                    }
+
+                    var hide = this.getRandom();
+                    this.hide = divArr[hide];
+                    divArr[hide].className = 'hide';
+                }
+                judge() {//判断
+
+                    var divArr = this.divArr;
+                    var now = [];
+
+                    for (var i = 0; i < divArr.length; i++) {
+                        now.push(divArr[i].style.top + divArr[i].style.left);
+                    }
+
+                    if (this.pos.join('') == now.join('')) {
+                        this.id.innerHTML = '';
+                        this.id.style.backgroundImage = 'url(img/vf.jpg)';
+                    } else {
+                        this.second++;
+                    }
+
+                }
+                move() {//移动
+                    var divArr = this.divArr;
+                    var hide = this.hide;
+                    var size = this.size;
+                    var self = this;
+
+                    var hideTop = hide.offsetTop;
+                    var hideLeft = hide.offsetLeft;
+
+                    var eventDiv = [];
+
+                    for (var i = 0; i < divArr.length; i++) {
+                        if (divArr[i] == hide) {
+                            continue;
+                        }
+                        var b1 = divArr[i].offsetTop == hideTop && (divArr[i].offsetLeft + size == hideLeft || divArr[i].offsetLeft - size == hideLeft);
+                        var b2 = divArr[i].offsetLeft == hideLeft && (divArr[i].offsetTop + size == hideTop || divArr[i].offsetTop - size == hideTop);
+                        if (b1 || b2) {
+                            eventDiv.push(divArr[i]);
+                        }
+                    }
+
+                    for (var i = 0; i < eventDiv.length; i++) {
+                        eventDiv[i].onclick = function () {
+                            var top = this.style.top;
+                            var left = this.style.left;
+
+                            if (self.second != 0 && self.theOn != this) {
+                                self.theOn.onclick = null;
+                            }
+
+                            self.theOn = this;
+
+                            this.style.transition = 'all 1s';
+
+                            this.style.top = hide.style.top;
+                            this.style.left = hide.style.left;
+
+                            hide.style.top = top;
+                            hide.style.left = left;
+
+                            for (var i = 0; i < divArr.length; i++) {
+                                if (divArr[i] == this) {
+                                    continue;
+                                }
+                                divArr[i].onclick = null;
+                            }
+
+                            self.judge();
+                            self.move();
+                        }
+                    }
+
+                }
+                open() {
+                    this.arrangement();
+                    this.move();
+                }
+            }
+
+
+            //遮罩层设置
+            var Make = document.querySelector('.Make');
+            function onSiez() {
+                Make.style.width = window.innerWidth + 'px';
+                Make.style.height = window.innerHeight + 'px';
+            }
+            onSiez();
+            window.onresize = onSiez;
+
+            //难度选择
+            var sl = document.querySelector('#sl');
+
+            sl.onchange = function () {
+                if (sl.value != '选择难度') {
+                    Make.style.display = 'none';
+                    var jp = new JigsawPuzzle('.game', +sl.value);
+                    jp.id.parentNode.style.display = 'block';
+                    jp.Initialization();
+
+                    var btns = document.querySelectorAll('button');
+
+                    btns[0].onclick = function () {//开始按钮
+                        jp.open();
+                    };
+
+                    btns[1].onclick = function () {//重新选择难度按钮
+                        Make.style.display = 'block';
+                        jp.id.parentNode.style.display = 'none';
+                    }
+                }
+            }
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>

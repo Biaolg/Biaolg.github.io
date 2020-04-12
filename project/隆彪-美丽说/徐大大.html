@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas {
+            margin: 0 auto;
+            background-color: antiquewhite;
+        }
+
+        .can {
+            width: 1000px;
+            margin: 70px auto;
+        }
+        .text{
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="can"><canvas id="canvas" width="1000" height="400"></canvas></div>
+    <div class="text">的贴身男友</div>
+    <script>
+        var canvas = document.getElementById("canvas");
+
+
+        function Yuan(x, y, r, qhd, jhd, yans) {//画圆
+
+            var ctxy = canvas.getContext("2d");
+            ctxy.beginPath();
+            ctxy.strokeStyle = yans;
+            ctxy.arc(x, y, r, qhd * Math.PI, jhd * Math.PI);//False = 顺时针，true = 逆时针。
+            ctxy.stroke();
+        }
+
+
+        var x = 100;
+        var y = 30;
+        var y2 = 130;
+        var ytou = 60;
+        var xtou = 230;
+        var x3 = 200;
+        var y3 = 100;
+        var y4 = y2 - 30;
+        var y5 = 300;
+        var x4 = x3 - 40;
+        var x5 = 220;
+        var r = 7;
+        var qhd = 0;
+        var jhd = 0.01;
+        var yans = "#050330";
+
+
+        var birdTimer = setInterval(function () {
+
+
+            jhd = jhd + 1;
+            qhd = qhd + 0.01;
+
+            if (y < 100) {
+                x = x - 0.1;
+                y = y + 0.1;
+                x2 = x + 0.1;
+            }
+            Yuan(x, y, r, qhd, jhd, yans);
+            Yuan(x + 30, y + 30, r, qhd, jhd, yans);
+
+            Yuan(100, y2, r, qhd, jhd, yans);
+            if (y2 < 300) {
+                y2 += 0.24;
+            }
+            Yuan(x + 120, y, r, qhd, jhd, yans);
+
+            Yuan(220, y4, r, qhd, jhd, yans);
+            if (y2 < 300) {
+                y4 += 0.28;
+            }
+
+        }, 9);
+
+        var birdTimers = setInterval(function () {
+            Yuan(xtou, ytou, r, qhd, jhd, yans);
+            if (ytou < 100) {
+                xtou = xtou + 0.2;
+                ytou = ytou + 0.1;
+            }
+            Yuan(x3, y3, r, qhd, jhd, yans);
+            if (y < 100) {
+                x3 = x3 + 0.1;
+            }
+            Yuan(x4, y3 + 50, r, qhd, jhd, yans);
+            if (y < 100) {
+                x4 = x4 + 0.3;
+            }
+            Yuan(x5, y5, r, qhd, jhd, yans);
+            if(y5>280){
+                y5 = y5-0.05;
+                x5 = x5-0.05;
+            }
+            Yuan(x + 100, y+180, r, qhd, jhd, yans);
+            Yuan(xtou+20, ytou+155, r, qhd, jhd, yans);
+        }, 15);
+        
+        var j = 400;
+        var k = 150;
+        var j2 =540;
+        var k2 = 80;
+        var birdTimerd1 = setInterval(function () {
+            Yuan(j, k, r, qhd, jhd, yans);
+            if(j<600){
+                j+=0.5;
+            }
+            Yuan(j2, k2, r, qhd, jhd, yans);
+            if(j<600){
+                k2+=0.5;
+                j2-=0.3;
+            }
+            Yuan(xtou+300, ytou+155, r, qhd, jhd, yans);
+            Yuan(j+300, k, r, qhd, jhd, yans);
+            Yuan(j2+300, k2, r, qhd, jhd, yans);
+            Yuan(xtou+600, ytou+155, r, qhd, jhd, yans);
+        }, 18);
+
+
+        
+
+
+    </script>
+</body>
+
+</html>

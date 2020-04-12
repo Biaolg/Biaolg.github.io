@@ -1,0 +1,70 @@
+@media (max-width: 1200px) {
+    #myBody #polarBear {
+        display: none;
+    }
+
+    #myBody #myCard>div>div:hover img {
+        left: 0;
+    }
+}
+
+@media (max-width: 990px) {
+    .container {
+        max-width: 100%;
+    }
+
+    #myBody #Mate30l {
+        width: 90%;
+    }
+
+    #myBody #Mate30r {
+        margin-top: 200px;
+    }
+    #myBody #mCTl > img{
+        right: -3%;
+    }
+}
+
+@media (max-width: 767px) {
+    #myBody #myOl {
+        margin-left: 48%;
+    }
+    #myBody .noBox{
+        box-sizing: content-box;
+    }
+    #myBody #mCTl{
+        margin-top: 300px;
+    }
+    #myBody #mCTl>img{
+        left: 30%;
+        top: -70%;
+    }
+    #myBody #mCTl>div{
+        left: 4%;
+        height: 200px;
+    }
+    #myBody #mCTl>div small{
+        position: absolute;
+        bottom: 0px;
+    }
+    #myBody #polarBear{
+        display: block;
+        position: relative;
+        right: 110%;
+    }
+    #myBody .myContent .myExhc .myCex>div{
+        padding: 0;
+    }
+    #myBody .sim{
+        display: block;
+    }
+    #myBody .big{
+        display: none;
+    }
+}
+
+@media (max-width: 675px){
+    #myBody #polarBear{
+        display: none;
+    }
+}

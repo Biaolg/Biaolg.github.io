@@ -1,0 +1,406 @@
+li {
+  list-style: none;
+}
+a {
+  color: #000;
+}
+a:hover {
+  text-decoration: none;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-width: 450px;
+}
+.myMax {
+  max-width: 1366px;
+}
+.img {
+  width: 100%;
+  display: block;
+}
+#myBody {
+  max-width: 100%;
+  padding: 0;
+}
+#myBody .sim {
+  display: none;
+}
+#myBody .topNav {
+  background-color: #222;
+  height: 28px;
+  line-height: 28px;
+}
+#myBody .topNav .subject {
+  margin: 0 auto;
+  max-width: 1128px;
+  font-size: 12px;
+}
+#myBody .topNav .subject a {
+  color: white;
+}
+#myBody .topNav .subject .l {
+  float: left;
+}
+#myBody .topNav .subject .r {
+  float: right;
+}
+#myBody .topNav .subject .r span {
+  margin: 10px;
+}
+#myBody .myFNav {
+  height: 74px;
+  line-height: 74px;
+  background-color: #fff;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+#myBody .myFNav .subject {
+  margin: 0 auto;
+  max-width: 1128px;
+  font-size: 12px;
+}
+#myBody .myFNav .logo {
+  margin-top: 20px;
+  max-width: 133px;
+  display: block;
+}
+#myBody .myFNav .z .s {
+  margin-right: 0;
+}
+#myBody .myFNav .z .l {
+  margin-left: 0;
+}
+#myBody .myFNav .z > div {
+  font-size: 18px;
+  margin: 0 10px;
+  display: inline-block;
+}
+#myBody .myFNav .z > div:hover {
+  color: #e4193c;
+}
+#myBody .mySwiper {
+  position: relative;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+#myBody .mySwiper .carousel-inner img {
+  min-height: 550px;
+}
+#myBody .mySwiper .myOl {
+  width: 100px;
+  bottom: 134px;
+  margin: 0;
+  margin-left: 90%;
+  justify-content: right;
+}
+#myBody .mySwiper .myOl li {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  background-color: rgba(0, 0, 0, 0);
+}
+#myBody .mySwiper .myOl .active {
+  background-color: #000;
+}
+#myBody .mySwiper .myExhSm {
+  width: 100%;
+  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 100;
+}
+#myBody .mySwiper .myExhSm > div {
+  height: 70px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+#myBody .mySwiper .myExhSm > div:hover {
+  color: #e4193c;
+}
+#myBody .mySwiper .myExh {
+  max-width: 1106px;
+  box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #fff;
+  min-height: 182px;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  right: 0;
+}
+#myBody .mySwiper .myExh .my4 > div {
+  padding: 10%;
+}
+#myBody .mySwiper .myExh .my4 > div > div {
+  margin-right: 20px;
+}
+#myBody .mySwiper .myExh .my4 h3 {
+  font-size: 22px;
+  line-height: 34px;
+}
+#myBody .mySwiper .myExh .my4 h3:hover {
+  color: #e4193c;
+}
+#myBody .mySwiper .myExh .l {
+  float: left;
+}
+#myBody .myContent {
+  margin-top: 200px;
+  width: 100%;
+}
+#myBody .myContent .mCTl {
+  margin-left: -20px;
+  height: 450px;
+  width: 100%;
+  background-color: #32bae0;
+  position: relative;
+  border-radius: 5px;
+}
+#myBody .myContent .mCTl > img {
+  position: absolute;
+  top: 10%;
+  right: -10%;
+}
+#myBody .myContent .mCTl > div {
+  position: absolute;
+  bottom: 1%;
+  left: 25%;
+}
+#myBody .myContent .mCTl > div p {
+  margin-top: 10px;
+  font-size: 18px;
+}
+#myBody .myContent .mCTl > div span {
+  font-size: 22px;
+  font-weight: 700;
+}
+#myBody .myContent .mCTr {
+  max-width: 420px;
+  margin: 0 auto;
+  max-height: 620px;
+  border-radius: 5px;
+  background-color: #dde6ed;
+}
+#myBody .myContent .mCTr .img {
+  width: 100%;
+  height: 240px;
+  background: url(../img/airport_box2.jpg);
+  border-radius: 5px 5px 0px 0px;
+}
+#myBody .myContent .mCTr .programme {
+  padding: 40px 60px;
+}
+#myBody .myContent .mCTr .programme > div {
+  width: 100%;
+}
+#myBody .myContent .mCTr .programme > div > div {
+  font-size: 14px;
+  line-height: 22px;
+  height: 238px;
+}
+#myBody .myContent .mCTr .programme > div h2 {
+  font-size: 38px;
+  line-height: 48px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+#myBody .myContent .mCTr .programme > div > span {
+  font-size: 22px;
+}
+#myBody .myContent .polarBear {
+  margin-top: 100px;
+}
+#myBody .myContent .polarBear img {
+  margin: 0 auto;
+}
+#myBody .myContent .polarBear .lj {
+  font-size: 22px;
+  position: absolute;
+  bottom: 200px;
+  left: 175px;
+}
+#myBody .myContent .theTop {
+  overflow: hidden;
+}
+#myBody .myContent .theTop h2 {
+  font-weight: 700;
+  float: left;
+}
+#myBody .myContent .theTop > a {
+  float: right;
+  font-size: 22px;
+}
+#myBody .myContent .myExhc {
+  margin: 0 auto;
+  margin-top: 100px;
+}
+#myBody .myContent .myExhc .myCex {
+  margin-top: 100px;
+  width: 100%;
+  height: 406px;
+  background-color: #dce6ee;
+  border-radius: 10px;
+  position: relative;
+}
+#myBody .myContent .myExhc .myCex img {
+  position: absolute;
+  right: 0;
+  top: -50px;
+  border-radius: 5px;
+}
+#myBody .myContent .myExhc .myCex > div {
+  padding: 50px 0px 0px 50px;
+}
+#myBody .myContent .myExhc .myCex > div > div {
+  margin-left: 20px;
+  font-size: 18px;
+}
+#myBody .myContent .myExhc .myCex > div > div span:nth-child(1) {
+  font-size: 14px;
+  line-height: 22px;
+}
+#myBody .myContent .myExhc .myCex > div > div h3 {
+  font-size: 28px;
+  line-height: 38px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+#myBody .myContent .myExhc .myCex > div > div span:nth-child(3) {
+  font-size: 22px;
+  display: block;
+  margin-top: 80px;
+}
+#myBody .myContent .mySuccess {
+  margin-top: 200px;
+}
+#myBody .myContent .mySuccess .myCard > div {
+  margin-top: 130px;
+}
+#myBody .myContent .mySuccess .myCard > div > div {
+  margin: 0 auto;
+  max-width: 310px;
+  min-height: 340px;
+  background: #dde6ed;
+  position: relative;
+  border-radius: 5px;
+}
+#myBody .myContent .mySuccess .myCard > div > div img {
+  width: 100%;
+  position: absolute;
+  top: -90px;
+  border-radius: 5px 5px 0px 0px;
+}
+#myBody .myContent .mySuccess .myCard > div > div > div {
+  padding: 0px 30px;
+  padding-top: 40%;
+  padding-bottom: 30%;
+}
+#myBody .myContent .mySuccess .myCard > div > div > div span:nth-child(1) {
+  font-size: 14px;
+}
+#myBody .myContent .mySuccess .myCard > div > div > div h3 {
+  font-size: 22px;
+  font-weight: 700;
+}
+#myBody .myContent .mySuccess .myCard > div > div > div .gd {
+  font-size: 22px;
+  position: absolute;
+  bottom: 10px;
+}
+#myBody .myContent .mySuccess .myCard > div > div:hover img {
+  left: -20px;
+}
+#myBody .myContent .myJournalism {
+  margin-top: 100px;
+}
+#myBody .myContent .myJournalism .myCard {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #dde6ed;
+  padding: 30px 40px;
+  border-radius: 5px;
+  margin-top: 270px;
+  position: relative;
+}
+#myBody .myContent .myJournalism .myCard > div > div {
+  height: 150px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+#myBody .myContent .myJournalism .myCard h3 {
+  font-weight: 700;
+}
+#myBody .myContent .myJournalism .myCard span {
+  font-size: 22px;
+}
+#myBody .myContent .myJournalism .myCard img {
+  position: absolute;
+  width: 100%;
+  max-height: 250px;
+  display: block;
+  top: -60%;
+  left: 0;
+  border-radius: 5px 5px 0px 0px;
+}
+#myBody .myContent .myJournalism .Journalism ul {
+  width: 80%;
+  margin: 0 auto;
+}
+#myBody .myContent .myJournalism .Journalism ul li {
+  margin-top: 100px;
+}
+#myBody .myContent .myJournalism .Journalism ul li > div {
+  color: #666;
+  font-size: 14px;
+}
+#myBody .myContent .myJournalism .Journalism ul li a {
+  color: #282828;
+  font-size: 18px;
+  line-height: 22px;
+}
+#myBody .myBottom {
+  margin-top: 50px;
+  background-color: #f0f0f0;
+}
+#myBody .myBottom .iconfont-flash {
+  margin-top: 50px;
+}
+#myBody .myBottom .clearfix {
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+}
+#myBody .myBottom .clearfix li {
+  margin-top: 10px;
+}
+#myBody .myBottom h3 {
+  color: #282828;
+  font-size: 22px;
+  font-weight: 700;
+}
+#myBody .myBottom .copy {
+  background-color: #000;
+  color: white;
+  max-height: 80px;
+  line-height: 40px;
+  font-size: 14px;
+  overflow: hidden;
+}
+#myBody .myBottom .copy a {
+  color: white;
+}
+#myBody .myBottom .copy ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+#myBody .myBottom .copy li {
+  display: inline;
+}

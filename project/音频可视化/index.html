@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow: hidden;
+            background-image: url(img/timg.jpg);
+        }
+
+        canvas {
+            position: absolute;
+        }
+    </style>
+    <script src="js/audio.js"></script>
+</head>
+
+<body>
+    <canvas id="cavnas" width="1000" height="1000"></canvas>
+    <audio src="img/Aimee Blackschleger - Release My Soul.mp3"></audio>
+    <h1>单击鼠标播放,双击鼠标暂停</h1>
+    <script>
+
+        let $ = id => document.querySelector(id);
+
+        window.onload = () => {
+
+            let can = $('#cavnas');
+
+            can.width = window.innerWidth;
+            can.height = window.innerHeight + 10;
+
+            let ctx = can.getContext('2d');
+
+            let audio = $('audio');
+
+            let myAudCan = new AudioVisualization(audio, animation);
+
+            let jiao = 270;
+
+            myAudCan.openPlay();
+
+            can.onclick = () => {
+                audio.play();
+            }
+            can.ondblclick = () => {
+                audio.pause();
+            }
+
+            let coordinate = (Angle, Length, py, r, jiao = 279) => {
+                let du = Angle / 60 * 360 + jiao;
+
+                let x1 = r * Math.cos(du * Math.PI / 180) + can.width / 2;
+                let y1 = r * Math.sin(du * Math.PI / 180) + can.height / 2;
+
+                let x2 = (r + Length) * Math.cos((du + py) * Math.PI / 180) + can.width / 2;
+                let y2 = (r + Length) * Math.sin((du + py) * Math.PI / 180) + can.height / 2;
+
+                return { x1: x1, y1: y1, x2: x2, y2: y2 };
+            }
+
+            function animation(data) {
+                let r = 350;
+
+                let link1 = [];
+
+                let link2 = [];
+
+                ctx.clearRect(0, 0, can.width, can.height);
+
+                let gradient = ctx.createRadialGradient(can.width / 2, can.height / 2, 200, can.width / 2, can.height / 2, 400);
+                gradient.addColorStop(0.4, "red");
+                gradient.addColorStop(0.7, 'pink');
+                gradient.addColorStop(1, "skyblue");
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = 3;
+
+                ctx.beginPath();
+
+                //内层圆
+                for (let i = 10; i <= 70; i++) {
+
+                    let obj = coordinate(i, -data[i] / 2, 3, r + data[40] / 4, jiao);
+
+                    link1.push(obj);
+
+                    let x = obj.x1, y = obj.y1, x2 = obj.x2, y2 = obj.y2;
+
+                    if (i == 0) {
+                        ctx.moveTo(x2, y2);
+                        continue;
+                    }
+
+                    if (i == 70) {
+                        ctx.lineTo(x, y);
+                        ctx.closePath();
+                        continue;
+                    }
+
+                    ctx.lineTo(x, y);
+                    ctx.lineTo(x2, y2);
+                }
+                ctx.stroke();
+
+                ctx.beginPath();
+
+                //外层圆
+                for (let i = 10; i <= 70; i++) {
+
+                    let obj = coordinate(i, data[i], 3, r + data[40] / 4, jiao);
+
+                    link2.push(obj);
+
+                    let x = obj.x1, y = obj.y1, x2 = obj.x2, y2 = obj.y2;
+
+                    if (i == 0) {
+                        ctx.moveTo(x2, y2);
+                        continue;
+                    }
+                    if (i == 70) {
+                        ctx.lineTo(x, y);
+                        ctx.closePath();
+                        continue;
+                    }
+                    ctx.lineTo(x, y);
+                    ctx.lineTo(x2, y2);
+                }
+
+                ctx.stroke();
+
+                //点连线
+                for (let i = 0; i < link1.length; i++) {
+
+                    let x1 = link1[i].x2;
+                    let x2 = link2[i].x2;
+                    let y1 = link1[i].y2;
+                    let y2 = link2[i].y2;
+
+                    ctx.beginPath();
+
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+
+                    ctx.stroke();
+
+                }
+
+                jiao += 0.05;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

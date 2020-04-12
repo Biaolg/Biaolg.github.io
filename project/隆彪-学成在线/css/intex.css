@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: #f3f6f8;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+a:hover {
+  color: #00a4ff;
+}
+li {
+  list-style: none;
+}
+.w {
+  width: 1200px;
+  margin: 0 auto;
+}
+.hader {
+  overflow: hidden;
+  height: 100px;
+}
+.hader .Big-box div {
+  margin-top: 30px;
+  float: left;
+}
+.hader .Big-box .box-ml {
+  margin-left: 65px;
+}
+.hader .Big-box .box-ml ul li {
+  height: 30px;
+  font-size: 18px;
+  margin-right: 40px;
+  float: left;
+  line-height: 30px;
+  padding-bottom: 10px;
+}
+.hader .Big-box .box-ml ul li:hover {
+  border-bottom: solid #00a4ff 3px;
+}
+.hader .Big-box .box-mr {
+  margin-left: 50px;
+  height: 30px;
+  position: relative;
+}
+.hader .Big-box .box-mr input {
+  color: #dddddd;
+  height: 35px;
+  width: 355px;
+  border: solid #00a4ff 2px;
+  position: absolute;
+}
+.hader .Big-box .box-mr span {
+  position: absolute;
+  top: -0.5px;
+  left: 355px;
+}
+.hader .Big-box .box-r {
+  float: right;
+  margin-right: 30px;
+  width: 120px;
+}
+.hader .Big-box .box-r img {
+  border-radius: 50%;
+}
+.hader .Big-box .box-r .s2 {
+  display: inline-block;
+  position: relative;
+  top: -8px;
+  font-size: 16px;
+}
+.Navigation {
+  background: #1b046b;
+  overflow: hidden;
+}
+.Navigation .box {
+  background: url(../images/banner2.png);
+  height: 420px;
+}
+.Navigation .box .box-l {
+  background: rgba(22, 3, 81, 0.8);
+  float: left;
+  width: 190px;
+  height: 420px;
+}
+.Navigation .box .box-l ul {
+  padding: 15px;
+}
+.Navigation .box .box-l ul li {
+  font-size: 12px;
+}
+.Navigation .box .box-l ul li a {
+  display: block;
+  width: 160px;
+  height: 44px;
+  line-height: 44px;
+  color: white;
+}
+.Navigation .box .box-l ul li a span {
+  float: right;
+}
+.Navigation .box .box-l ul li a:hover {
+  color: #00a4ff;
+}
+.Navigation .box .box-m {
+  position: relative;
+}
+.Navigation .box .box-m ul {
+  position: absolute;
+  top: 370px;
+  left: 520px;
+}
+.Navigation .box .box-m ul li {
+  margin-right: 15px;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  float: left;
+  border-radius: 50%;
+}
+.Navigation .box .box-m ul ._1 {
+  width: 20px;
+  background: white;
+  border-radius: 50px;
+}
+.Navigation .box .box-r {
+  float: right;
+}
+.Navigation .box .box-r dl {
+  margin-top: 50px;
+  width: 230px;
+  background: rgba(255, 255, 255);
+}
+.Navigation .box .box-r dl dt {
+  margin-bottom: 20px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
+  background: #9acfea;
+}
+.Navigation .box .box-r dl dd {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 10px;
+  padding-bottom: 12px;
+  border-bottom: solid 1px #bbbbbb;
+}
+.Navigation .box .box-r dl dd a {
+  font-size: 10px;
+  color: #bbbbbb;
+}
+.Navigation .box .box-r dl dd a:hover {
+  color: #00a4ff;
+}
+.Navigation .box .box-r dl .ao {
+  color: #00a4ff;
+  border: none;
+}
+.Navigation .box .box-r dl .ao a {
+  color: #00a4ff;
+}
+.Navigation .box .box-r dl .btao {
+  border: none;
+}
+.Navigation .box .box-r dl .btao a {
+  width: 198px;
+  height: 38px;
+  line-height: 38px;
+  border: solid 1px #00a4ff;
+  display: block;
+  font-size: 18px;
+  color: #00a4ff;
+  text-align: center;
+}
+.content .top {
+  overflow: hidden;
+  margin-top: 16px;
+  width: 1200px;
+  height: 64px;
+  line-height: 64px;
+}
+.content .top span {
+  float: left;
+  font-size: 20px;
+  color: #414444;
+  font-weight: normal;
+}
+.content .top ul {
+  width: 400px;
+  margin: 0 auto;
+}
+.content .top ul li {
+  float: left;
+}
+.content .top ul li a {
+  text-align: center;
+  width: 100px;
+  font-size: 16px;
+}
+.content .top a {
+  float: right;
+  font-size: 10px;
+  color: #888888;
+}
+.content .top a:hover {
+  color: #00a4ff;
+}
+.content .nav {
+  margin-top: 10px;
+  width: 1200px;
+  height: 60px;
+  box-shadow: 1px 1px 5px #888888;
+}
+.content .nav dl dt {
+  margin-left: 32px;
+  margin-right: 32px;
+  color: #00a4ff;
+  float: left;
+  height: 60px;
+  line-height: 60px;
+}
+.content .nav dl dd {
+  float: left;
+  height: 60px;
+  line-height: 60px;
+}
+.content .nav dl dd a {
+  padding-left: 35px;
+  padding-right: 35px;
+  border-left: solid 1px #888888;
+}
+.content .nav span {
+  float: right;
+}
+.content .nav span a {
+  color: #00a4ff;
+  margin-right: 24px;
+  font-size: 10px;
+  height: 60px;
+  line-height: 60px;
+}
+.content .recommend {
+  overflow: hidden;
+}
+.content .recommend .box-ex {
+  width: 1200px;
+}
+.content .recommend .box-ex ul {
+  overflow: hidden;
+}
+.content .recommend .box-ex ul li {
+  position: relative;
+  background: white;
+  float: left;
+  width: 228px;
+  height: 270px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.content .recommend .box-ex ul li a img {
+  width: 228px;
+}
+.content .recommend .box-ex ul li span {
+  font-size: 14px;
+  display: block;
+  margin: 20px;
+}
+.content .recommend .box-ex ul li p {
+  font-size: 12px;
+  color: #bbbbbb;
+  margin-left: 20px;
+}
+.content .recommend .box-ex ul li p font {
+  color: #fa8d49;
+}
+.content .recommend .box-ex ul li:nth-child(5) {
+  margin-right: 0px;
+}
+.content .recommend .box-ex ul .dtp {
+  width: 40px;
+  position: absolute;
+  top: 0;
+  left: 193px;
+}
+.content .introduction #box-l {
+  background: url(../images/php2.png);
+}
+.content .introduction .box {
+  overflow: hidden;
+}
+.content .introduction .box .box-l {
+  margin-right: 15px;
+  padding-top: 40px;
+  width: 228px;
+  height: 352px;
+  float: left;
+  background: url(../images/php1.png);
+}
+.content .introduction .box .box-l p {
+  margin-top: 50px;
+  color: white;
+  font-size: 14px;
+  margin-left: 32px;
+}
+.content .introduction .box .box-l .p1 {
+  margin-bottom: 12px;
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+.content .introduction .box .box-r {
+  float: right;
+}
+.content .introduction .box .box-r .r-top {
+  margin-bottom: 22px;
+}
+.content .introduction .box .box-r ul {
+  overflow: hidden;
+}
+.content .introduction .box .box-r ul li {
+  position: relative;
+  background: white;
+  float: left;
+  width: 228px;
+  height: 270px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.content .introduction .box .box-r ul li a img {
+  width: 228px;
+}
+.content .introduction .box .box-r ul li span {
+  font-size: 14px;
+  display: block;
+  margin: 20px;
+}
+.content .introduction .box .box-r ul li p {
+  font-size: 12px;
+  color: #bbbbbb;
+  margin-left: 20px;
+}
+.content .introduction .box .box-r ul li p font {
+  color: #fa8d49;
+}
+.content .introduction .box .box-r ul li:nth-child(4) {
+  margin-right: 0px;
+}
+.content .Mechanics .box-b ul {
+  overflow: hidden;
+}
+.content .Mechanics .box-b ul li {
+  position: relative;
+  background: white;
+  float: left;
+  width: 228px;
+  height: 270px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.content .Mechanics .box-b ul li a img {
+  width: 228px;
+}
+.content .Mechanics .box-b ul li span {
+  font-size: 14px;
+  display: block;
+  margin: 20px;
+}
+.content .Mechanics .box-b ul li p {
+  font-size: 12px;
+  color: #bbbbbb;
+  margin-left: 20px;
+}
+.content .Mechanics .box-b ul li p font {
+  color: #fa8d49;
+}
+.content .Mechanics .box-b ul li:nth-child(5) {
+  margin-right: 0px;
+}
+.bottom {
+  background: white;
+  height: 250px;
+}
+.bottom .box .box-l {
+  margin-top: 30px;
+  float: left;
+}
+.bottom .box .box-l div {
+  margin-bottom: 25px;
+}
+.bottom .box .box-l div p {
+  font-size: 14px;
+}
+.bottom .box .box-l .appd {
+  width: 114px;
+}
+.bottom .box .box-l .appd a {
+  display: block;
+  width: 114px;
+  height: 32px;
+  line-height: 32px;
+  color: #00a4ff;
+  text-align: center;
+  border: solid #00a4ff 1px;
+}
+.bottom .box .box-l .appd a:hover {
+  color: white;
+  background: #00a4ff;
+}
+.bottom .box .box-r {
+  width: 500px;
+  margin-top: 30px;
+  float: right;
+}
+.bottom .box .box-r dl {
+  float: left;
+  margin-left: 80px;
+}
+.bottom .box .box-r dl dt {
+  padding-bottom: 16px;
+}
+.bottom .box .box-r dl dd {
+  font-size: 14px;
+  height: 24px;
+  line-height: 24px;
+}
