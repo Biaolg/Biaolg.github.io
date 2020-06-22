@@ -17,7 +17,19 @@
     <link
         href="http://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext"
         rel="stylesheet" />
-
+    <style>
+        .my-img {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-height: 700px;
+        }
+        .my-img img{
+            width: 100%;
+            display: block;
+        }
+    </style>
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
     <!--[if lt IE 9]>
@@ -76,7 +88,9 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="./assets/images/1.jpg" alt="...">
+                    <div class="my-img">
+                        <img src="./assets/images/1.jpg" alt="...">
+                    </div>
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row">
@@ -93,7 +107,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="./assets/images/2.jpg" alt="...">
+                    <div class="my-img">
+                        <img src="./assets/images/2.jpg" alt="...">
+                    </div>
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row">
@@ -109,7 +125,9 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img src="./assets/images/4.jpg" alt="...">
+                    <div class="my-img">
+                        <img src="./assets/images/4.jpg" alt="...">
+                    </div>
                     <div class="carousel-caption">
                         <div class="container">
                             <div class="row">
@@ -152,7 +170,9 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <img src="./assets/images/img.jpg" alt="">
+                        <div class="my-img">
+                            <img src="./assets/images/img.jpg" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
