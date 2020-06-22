@@ -12,6 +12,22 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="sweetalert/dist/sweetalert.css">
 	<link rel="stylesheet" href="css/stisla.css">
+	<style>
+		.myimg {
+			width: 100%;
+			height: 175px;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+		}
+		.myimg{
+			width: 100%;
+			display: block;
+			/* position: absolute; */
+		}
+	</style>
 </head>
 
 <body>
@@ -77,12 +93,6 @@
 							<p>
 								性别:<font color='#007bff'>男</font>
 							</p>
-							<p>
-								民族:<font color='#007bff'>壮族</font>
-							</p>
-							<p>
-								现住地:<font color='#007bff'>广东江门</font>
-							</p>
 						</div>
 					</div>
 				</div>
@@ -94,7 +104,7 @@
 						<div class="desc">
 							<h2>学历</h2>
 							<p>
-								就读于<a href="http://www.gziec.net/index.aspx" target="_blank">广州涉外经济职业技术学院</a>,如今正在实习期!
+								就读于<a href="http://www.gziec.net/index.aspx" target="_blank">广州涉外经济职业技术学院</a>
 							</p>
 						</div>
 					</div>
@@ -109,13 +119,6 @@
 							<p>
 								电话号码:<font color='#007bff'>13129302861</font>
 							</p>
-							<p>
-								QQ:<font color='#007bff'>64511717</font>
-							</p>
-							<p>
-								微信:<font color='#007bff'>SakuranFand</font>
-							</p>
-
 							<p>
 								邮箱:<font color='#007bff'>longbiaokuaile@qq.com</font>
 							</p>
@@ -136,7 +139,9 @@
 
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
-							<img class="card-img-top" src="img/news/学成在线.jpg" alt="Article Image">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/学成在线.jpg" alt="Article Image">
+							</div>
 							<div class="card-body">
 								<div class="card-subtitle mb-2 text-muted">HTML+CSS</div>
 								<h4 class="card-title"><a href="/project/xvec/index.html" class="card-more"
@@ -151,7 +156,9 @@
 
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
-							<img class="card-img-top" src="img/news/美丽说.png" alt="Article Image">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/美丽说.png" alt="Article Image">
+							</div>
 							<div class="card-body">
 								<div class="card-subtitle mb-2 text-muted">HTML+CSS+JS</div>
 								<h4 class="card-title"><a href="project/meilis/index.html" class="card-more"
@@ -166,7 +173,9 @@
 
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
-							<img class="card-img-top" src="img/news/bs3.jpg" alt="Article Image">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/bs3.jpg" alt="Article Image">
+							</div>
 							<div class="card-body">
 								<div class="card-subtitle mb-2 text-muted">bootstrap3</div>
 								<h4 class="card-title"><a href="/project/bs3-mot/index.html" class="card-more"
@@ -181,7 +190,9 @@
 
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
-							<img class="card-img-top" src="img/news/bs4.jpg" alt="Article Image">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/bs4.jpg" alt="Article Image">
+							</div>
 							<div class="card-body">
 								<div class="card-subtitle mb-2 text-muted">bootstrap4</div>
 								<h4 class="card-title"><a href="/project/bs4-hw/index.html" class="card-more"
@@ -196,7 +207,9 @@
 
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
-							<img class="card-img-top" src="img/news/move.jpg" alt="Article Image">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/move.jpg" alt="Article Image">
+							</div>
 							<div class="card-body">
 								<div class="card-subtitle mb-2 text-muted">ajax+js+Promise</div>
 								<h4 class="card-title"><a href="/project/move-weather/index.html" class="card-more"
@@ -212,7 +225,9 @@
 
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
-							<img class="card-img-top" src="img/news/音乐可视化.jpg" alt="Article Image">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/音乐可视化.jpg" alt="Article Image">
+							</div>
 							<div class="card-body">
 								<div class="card-subtitle mb-2 text-muted">canvas+aodioContext</div>
 								<h4 class="card-title"><a href="/project/Music-look/index.html" class="card-more"
@@ -227,13 +242,49 @@
 
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
-							<img class="card-img-top" src="img/news/wywyiny.jpg" alt="Article Image">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/wywyiny.jpg" alt="Article Image">
+							</div>
 							<div class="card-body">
 								<div class="card-subtitle mb-2 text-muted">vue</div>
 								<h4 class="card-title"><a href="/project/music-wyy/index.html" class="card-more"
 										target="_blank">vue音乐播放器</a></h4>
 								<div class="text-right">
 									<a href="/project/music-wyy/index.html" class="card-more" target="_blank">预览<i
+											class="ion-ios-arrow-right"></i></a>
+								</div>
+							</div>
+						</article>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4">
+						<article class="card">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/BiaolgChat.jpg" alt="Article Image">
+							</div>
+							<div class="card-body">
+								<div class="card-subtitle mb-2 text-muted">vue</div>
+								<h4 class="card-title"><a href="/project/music-wyy/index.html" class="card-more"
+										target="_blank">BiaolgChat</a></h4>
+								<div class="text-right">
+									<a href="/project/biaolgchat/index.html" class="card-more" target="_blank">预览<i
+											class="ion-ios-arrow-right"></i></a>
+								</div>
+							</div>
+						</article>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4">
+						<article class="card">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/worldLink.jpg" alt="Article Image">
+							</div>
+							<div class="card-body">
+								<div class="card-subtitle mb-2 text-muted">vue+node.js</div>
+								<h4 class="card-title"><a href="http://112.74.50.101:9000/#/Signin" class="card-more"
+										target="_blank">worldlink</a></h4>
+								<div class="text-right">
+									<a href="http://112.74.50.101:9000/#/Signin" class="card-more" target="_blank">预览<i
 											class="ion-ios-arrow-right"></i></a>
 								</div>
 							</div>
