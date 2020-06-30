@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #aaa;
+}
+.box {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 1000px;
+  height: 800px;
+}
+#menu {
+  width: 300px;
+  height: 300px;
+  border: solid #ccc 1px;
+  background-color: #fff;
+  position: absolute;
+  display: none;
+}
+#menu .pen {
+  width: 60px;
+  height: 100%;
+  border-right: #ccc solid 1px;
+  text-align: center;
+  float: left;
+  overflow: hidden;
+}
+#menu .pen > div {
+  overflow: hidden;
+  margin-top: 10px;
+}
+#menu .pen .penno {
+  background-color: #666;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 30px auto;
+}
+#menu .pen .atta {
+  background-color: #000;
+}
+#menu .pen [data-width~='2'] {
+  width: 20px;
+  height: 20px;
+}
+#menu .pen [data-width~='4'] {
+  width: 30px;
+  height: 30px;
+}
+#menu .pen [data-width~='6'] {
+  width: 40px;
+  height: 40px;
+}
+#menu .color {
+  float: left;
+  width: 239px;
+  height: 300px;
+}
+#menu .color .top {
+  height: 60px;
+  border-bottom: solid #ccc 1px;
+  overflow: hidden;
+}
+#menu .color .top .lo-color {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  margin: auto;
+  margin-top: 5px;
+}
+#menu .color .bottom {
+  margin-top: 50px;
+}
+#menu .color .bottom .ad-color {
+  width: 200px;
+  margin: auto;
+}
+#menu .color .bottom .ad-color > div {
+  width: 200px;
+  height: 5px;
+  background-color: #aaa;
+}
+#menu .color .bottom .ad-color #red > div {
+  width: 0px;
+  height: 100%;
+  background-color: red;
+}
+#menu .color .bottom .ad-color #green > div {
+  width: 0px;
+  height: 100%;
+  background-color: green;
+}
+#menu .color .bottom .ad-color #blue > div {
+  width: 0px;
+  height: 100%;
+  background-color: blue;
+}
+#menu .color .btn {
+  width: 200px;
+  margin: auto;
+  margin-top: 50px;
+}
+#menu .color .btn button {
+  width: 63px;
+}

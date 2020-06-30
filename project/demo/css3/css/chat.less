@@ -1,0 +1,273 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color   : #eee;
+    perspective        : 1000px;
+    height             : 100%;
+    display            : flex;
+    overflow           : hidden;
+    -webkit-user-select: none;
+    -moz-user-select   : none;
+}
+
+
+
+.box {
+    width              : 360px;
+    height             : 540px;
+    background-color   : #fff;
+    margin             : auto;
+    border-radius      : 15px;
+    transition         : all .5s;
+    position           : relative;
+    background         : url(../img/600x600.jpg) no-repeat;
+    background-size    : cover;
+    background-position: center;
+    transform-style    : preserve-3d;
+    display            : flex;
+    flex-direction     : column;
+    justify-content    : center;
+    text-align         : center;
+    transform-origin   : 50% 50% 200px;
+    color              : #fff;
+
+    .make {
+        content      : '';
+        position     : absolute;
+        top          : 0;
+        left         : 0;
+        width        : 100%;
+        height       : 100%;
+        border-radius: 15px;
+        transition   : inherit;
+    }
+
+    &::before {
+        .make();
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &::after {
+        .make();
+        background-color: #000;
+        box-shadow      : 0 0 10px 0 #000;
+        transform       : translateZ(-20px);
+    }
+
+    ul {
+        display        : flex;
+        justify-content: center;
+        transition     : inherit;
+        color          : #000;
+
+        li {
+            width           : 20px;
+            height          : 20px;
+            margin          : 10px;
+            background-color: #fff;
+            transform       : rotate(315deg);
+            position        : relative;
+            transform-style : preserve-3d;
+            transition      : inherit;
+
+            span {
+                font-size : 8px;
+                position  : absolute;
+                top       : 0;
+                left      : 0;
+                transition: inherit;
+            }
+
+            .top {
+                width           : 20px;
+                height          : 20px;
+                background-color: #fff;
+                transform       : translateZ(-10px);
+                font-size       : 8px;
+            }
+
+            .left {
+                width           : 0px;
+                height          : 20px;
+                padding-right   : 10px;
+                text-align      : right;
+                background-color: #eee;
+                transform-origin: 0% 0%;
+                transform       : rotateY(-90deg);
+            }
+
+            &:after {
+                content         : ' ';
+                width           : 0px;
+                height          : 20px;
+                background-color: #aaa;
+                position        : absolute;
+                top             : 0;
+                left            : 0;
+                transform-origin: 0% 0%;
+                transform       : rotateY(-90deg) rotateX(-90deg) translateZ(20px);
+                transition      : inherit;
+            }
+        }
+    }
+
+    .tx {
+        transform : translateZ(0px);
+        transition: inherit;
+    }
+
+    h3 {
+        opacity    : 1;
+        font-size  : 50px;
+        margin     : 10px;
+        font-weight: 400;
+        .tx();
+    }
+
+    h4 {
+        opacity      : 1;
+        font-size    : 26px;
+        margin-bottom: 10px;
+        font-weight  : 500;
+        .tx();
+
+    }
+
+    h5 {
+        font-size  : 50px;
+        font-weight: 100;
+        .tx();
+    }
+}
+
+.at {
+    transform: rotateX(60deg) translateY(-120px);
+
+    &::before {
+        background-color: rgba(30, 30, 200, 0.5);
+    }
+
+    ul {
+        li {
+            transform: rotate(290deg);
+
+            &:nth-child(1) {
+                .left {
+                    width: 200px;
+                }
+
+                .top {
+                    transform: translateZ(200px);
+                }
+
+                &:after {
+                    width: 200px;
+                }
+            }
+
+            &:nth-child(2) {
+                .left {
+                    width: 100px;
+                }
+
+                .top {
+                    transform: translateZ(100px);
+                }
+
+                &:after {
+                    width: 100px;
+                }
+            }
+
+            &:nth-child(3) {
+                .left {
+                    width: 150px;
+                }
+
+                .top {
+                    transform: translateZ(150px);
+                }
+
+                &:after {
+                    width: 150px;
+                }
+            }
+
+            &:nth-child(4) {
+                .left {
+                    width: 250px;
+                }
+
+                .top {
+                    transform: translateZ(250px);
+                }
+
+                &:after {
+                    width: 250px;
+                }
+            }
+
+            &:nth-child(5) {
+                .left {
+                    width: 50px;
+                }
+
+                .top {
+                    transform: translateZ(50px);
+                }
+
+                &:after {
+                    width: 50px;
+                }
+            }
+
+            &:nth-child(6) {
+                .left {
+                    width: 50px;
+                }
+
+                .top {
+                    transform: translateZ(50px);
+                }
+
+                &:after {
+                    width: 50px;
+                }
+            }
+
+            &:nth-child(7) {
+                .left {
+                    width: 100px;
+                }
+
+                .top {
+                    transform: translateZ(100px);
+                }
+
+                &:after {
+                    width: 100px;
+                }
+            }
+
+
+        }
+    }
+
+
+
+    h3 {
+        opacity  : 0;
+        transform: translateZ(80px);
+    }
+
+    h4 {
+        opacity  : 0;
+        transform: translateZ(50px);
+    }
+
+    h5 {
+        transform: translateY(100px) translateZ(40px);
+    }
+}

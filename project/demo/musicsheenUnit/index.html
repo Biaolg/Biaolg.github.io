@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        canvas {
+            width: 100%;
+            display: block;
+        }
+
+        .box {
+            margin: 100px;
+            width: 500px;
+            background-color: #eee;
+        }
+
+        .code {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .explain {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            font-size: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="explain">
+        <h1>插件使用方法</h1>
+        <p>获取audio节点,然后new AudioVisualization('audio节点', '回调函数')</p>
+        <p>回调函数会接收一个data参数,类型是数组,依据获取到的data在canvas上绘画即可</p>
+        <p>最后是执行AudioVisualization的openPlay方法</p>
+        <p>注意解决谷歌浏览器不允许首次进入直接播放音乐的问题,解决方法是使用异步或事件中new AudioVisualization</p>
+        <p>或者你有更好的解决方法,以上方法仅供参考</p>
+    </div>
+    <h1>demo</h1>
+    <div class="box">
+        <button>请点击此按钮播放</button>
+        <!-- one -->
+        <canvas id="canvas1" width="600" height="600"></canvas>
+        <!-- tow -->
+        <canvas id="canvas2" width="3000" height="500"></canvas>
+    </div>
+    <div class="code">
+        <h1>插件源码展示</h1>
+        <pre>
+            <code>
+            class AudioVisualization {
+                constructor(audio, animation) {
+                    this.audio = audio;
+                    this.animation = animation;
+                    this.fftSize = 128;
+                }
+                openPlay() {
+                    var self = this;
+                    var a = this.audio;
+
+                    //储存定时器
+                    var timer = null;
+
+                    //解析器
+                    var AudCtx = new AudioContext();
+                    var src = AudCtx.createMediaElementSource(a);
+                    var analyser = AudCtx.createAnalyser();
+
+                    src.connect(analyser);
+                    analyser.connect(AudCtx.destination);
+                    analyser.fftSize = this.fftSize;
+
+                    var bufferLength = analyser.frequencyBinCount;
+
+                    var dataArray = new Uint8Array(bufferLength);//8位无符号定长数组
+
+                    function changeTime() {
+                        timer = requestAnimationFrame(changeTime);
+                        analyser.getByteFrequencyData(dataArray);
+                        self.animation(dataArray);
+                    }
+
+                    a.addEventListener('play', () => {
+                        changeTime();
+                    })
+
+                    a.addEventListener('pause', () => {
+                        cancelAnimationFrame(timer);
+                    })
+                }
+            }
+            </code>
+        </pre>
+    </div>
+    <audio src="./img/小林未郁 - Your voice.mp3"></audio>
+    <script src="./js/audio.js"></script>
+    <script>
+        window.onload = function () {
+
+            let canvas1 = document.querySelector('#canvas1');
+            let canvas2 = document.querySelector('#canvas2');
+            let ctx1 = canvas1.getContext('2d');
+            let ctx2 = canvas2.getContext('2d');
+            let botton = document.querySelector('button');
+
+
+            let auduo = document.querySelector('audio');
+            let jiao = 230;
+            var coordinate = (Angle, Length, py, r, jiao = 0, can = canvas1) => {
+                var du = Angle / 35 * 360 + jiao;
+
+                var x1 = r * Math.cos((du + py) * Math.PI / 180) + can.width / 2;
+                var y1 = r * Math.sin((du + py) * Math.PI / 180) + can.height / 2;
+
+                var x2 = (r + Length) * Math.cos((du + py) * Math.PI / 180) + can.width / 2;
+                var y2 = (r + Length) * Math.sin((du + py) * Math.PI / 180) + can.height / 2;
+
+                return { x1: x1, y1: y1, x2: x2, y2: y2 };
+            }
+
+            function animation(data) {
+
+                let canvas = canvas1;
+                let ctx = ctx1;
+                var r = 150;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                let color = `rgb(255,${255 - data[10]},${data[10]})`;
+
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 5;
+                ctx.lineCap = "round";
+
+                let xiantiao = (py, px) => {
+                    for (let i = 10; i <= 45; i++) {
+                        ctx.beginPath();
+                        let cha = data[i];
+
+                        if (i <= 25 && data[i] >= 100) {
+                            cha = data[i] / 1.3;
+                        }
+
+                        let obj = coordinate(i, cha / 3 + px, py, r, jiao);
+
+                        var x = obj.x1, y = obj.y1, x2 = obj.x2, y2 = obj.y2;
+
+                        ctx.moveTo(x, y);
+                        ctx.lineTo(x2, y2);
+                        ctx.stroke();
+
+                        ctx.beginPath();
+                    }
+                }
+
+                xiantiao(0, 10)
+                xiantiao(3.5, 3)
+                xiantiao(-3.5, 3)
+
+                ctx = ctx2;
+                canvas = canvas2;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                ctx.lineWidth = 50;
+                let my_gradient = ctx.createLinearGradient(0, 0, 3000, 0);
+                my_gradient.addColorStop(0, "pink");
+                my_gradient.addColorStop(0.5, "skyblue");
+                my_gradient.addColorStop(1, "pink");
+                ctx.strokeStyle = my_gradient;
+                ctx.lineCap = "round";
+
+                //左
+                for (let i = 0; i < 25; i++) {
+                    let index = 30 + i;
+                    let x = canvas.width / 2 - i * 60;
+                    let height = 500 - data[index] * 2 + i * 10;
+
+                    // console.log(height);
+                    ctx.beginPath();
+                    ctx.moveTo(x, 500);
+                    ctx.lineTo(x, height);
+                    ctx.stroke();
+                }
+
+                //右
+                for (let i = 0; i < 25; i++) {
+                    let index = 30 + i;
+                    let x = canvas.width / 2 + i * 60;
+                    let height = 500 - data[index] * 2 + i * 10;
+
+                    ctx.beginPath();
+                    ctx.moveTo(x, 500);
+                    ctx.lineTo(x, height);
+                    ctx.stroke();
+                }
+
+            }
+            let aContext = null;
+            botton.onclick = function () {
+                aContext = new AudioVisualization(auduo, animation);
+                aContext.openPlay();
+                auduo.play();
+                botton.onclick = null;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

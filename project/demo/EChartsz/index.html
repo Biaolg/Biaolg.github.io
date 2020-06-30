@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@4.7.0/dist/echarts.min.js"></script>
+    <script>
+        var $ = id => document.querySelector(id);
+        var obj = {};
+        window.onload = () => {
+            for (const key in obj) {
+                obj[key]();
+            }
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .box>div {
+            margin: 20px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>EChartsz</h1>
+    <div class="box">
+        <!-- 柱状图 -->
+        <div id="column" style="width: 600px;height:500px;"></div>
+        <script>
+            obj.column = function () {
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init($('#column'));
+
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: 'EChartsz柱状图'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['销量']
+                    },
+                    xAxis: {
+                        data: ["1", "2", "3", "4", "5", "6"]
+                    },
+                    yAxis: {},
+                    series: [{
+                        name: '表示',
+                        type: 'bar',
+                        data: [5, 20, 36, 10, 10, 20]
+                    }]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+
+            }
+        </script>
+        <!-- =================================================================== -->
+
+        <!-- 饼状图 -->
+        <div id="circular" style="width: 600px;height:500px;"></div>
+        <script>
+            obj.circular = function () {
+                var myChart = echarts.init($('#circular'));
+
+                option = {
+                    title: {
+                        text: 'EChartsz饼状图',
+                        subtext: '纯属虚构',
+                        left: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: '{a} <br/>{b} : {c} ({d}%)'
+                    },
+                    legend: {
+                        orient: 'vertical',
+                        left: 'left',
+                        data: ['1', '2', '3', '4', '5']
+                    },
+                    series: [
+                        {
+                            name: '访问来源',
+                            type: 'pie',
+                            radius: '55%',
+                            center: ['50%', '60%'],
+                            data: [
+                                { value: 335, name: '1' },
+                                { value: 310, name: '2' },
+                                { value: 234, name: '3' },
+                                { value: 135, name: '4' },
+                                { value: 1548, name: '5' }
+                            ],
+                            emphasis: {
+                                itemStyle: {
+                                    shadowBlur: 10,
+                                    shadowOffsetX: 0,
+                                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                                }
+                            }
+                        }
+                    ]
+                };
+
+                myChart.setOption(option);
+            }
+
+        </script>
+        <!-- =================================================================== -->
+
+        <!-- 雷达图 -->
+        <div id="radar" style="width: 800px;height:500px;"></div>
+        <script>
+            obj.radar = function () {
+                var myChart = echarts.init($('#radar'));
+
+                option = {
+                    title: {
+                        text: 'EChartsz雷达图'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: ['预算分配（Allocated Budget）', '实际开销（Actual Spending）']
+                    },
+                    radar: {
+                        // shape: 'circle',
+                        name: {
+                            textStyle: {
+                                color: '#fff',
+                                backgroundColor: '#999',
+                                borderRadius: 3,
+                                padding: [3, 5]
+                            }
+                        },
+                        indicator: [
+                            { name: '销售（sales）', max: 6500 },
+                            { name: '管理（Administration）', max: 16000 },
+                            { name: '信息技术（Information Techology）', max: 30000 },
+                            { name: '客服（Customer Support）', max: 38000 },
+                            { name: '研发（Development）', max: 52000 },
+                            { name: '市场（Marketing）', max: 25000 }
+                        ]
+                    },
+                    series: [{
+                        name: '预算 vs 开销（Budget vs spending）',
+                        type: 'radar',
+                        // areaStyle: {normal: {}},
+                        data: [
+                            {
+                                value: [4300, 10000, 28000, 35000, 50000, 19000],
+                                name: '预算分配（Allocated Budget）'
+                            },
+                            {
+                                value: [5000, 14000, 28000, 31000, 42000, 21000],
+                                name: '实际开销（Actual Spending）'
+                            }
+                        ]
+                    }]
+                };
+
+                myChart.setOption(option);
+            }
+
+        </script>
+        <!-- =================================================================== -->
+
+        <!-- 旭日图 -->
+        <div id="Rsun" style="width: 500px;height:500px;"></div>
+        <script>
+            obj.Rsun = function () {
+                var myChart = echarts.init($('#Rsun'));
+
+                var item1 = {
+                    color: '#F54F4A'
+                };
+                var item2 = {
+                    color: '#FF8C75'
+                };
+                var item3 = {
+                    color: '#FFB499'
+                };
+
+                var data = [{
+                    children: [{
+                        value: 5,
+                        children: [{
+                            value: 1,
+                            itemStyle: item1
+                        }, {
+                            value: 2,
+                            children: [{
+                                value: 1,
+                                itemStyle: item2
+                            }]
+                        }, {
+                            children: [{
+                                value: 1
+                            }]
+                        }],
+                        itemStyle: item1
+                    }, {
+                        value: 10,
+                        children: [{
+                            value: 6,
+                            children: [{
+                                value: 1,
+                                itemStyle: item1
+                            }, {
+                                value: 1
+                            }, {
+                                value: 1,
+                                itemStyle: item2
+                            }, {
+                                value: 1
+                            }],
+                            itemStyle: item3
+                        }, {
+                            value: 2,
+                            children: [{
+                                value: 1
+                            }],
+                            itemStyle: item3
+                        }, {
+                            children: [{
+                                value: 1,
+                                itemStyle: item2
+                            }]
+                        }],
+                        itemStyle: item1
+                    }],
+                    itemStyle: item1
+                }, {
+                    value: 9,
+                    children: [{
+                        value: 4,
+                        children: [{
+                            value: 2,
+                            itemStyle: item2
+                        }, {
+                            children: [{
+                                value: 1,
+                                itemStyle: item1
+                            }]
+                        }],
+                        itemStyle: item1
+                    }, {
+                        children: [{
+                            value: 3,
+                            children: [{
+                                value: 1
+                            }, {
+                                value: 1,
+                                itemStyle: item2
+                            }]
+                        }],
+                        itemStyle: item3
+                    }],
+                    itemStyle: item2
+                }, {
+                    value: 7,
+                    children: [{
+                        children: [{
+                            value: 1,
+                            itemStyle: item3
+                        }, {
+                            value: 3,
+                            children: [{
+                                value: 1,
+                                itemStyle: item2
+                            }, {
+                                value: 1
+                            }],
+                            itemStyle: item2
+                        }, {
+                            value: 2,
+                            children: [{
+                                value: 1
+                            }, {
+                                value: 1,
+                                itemStyle: item1
+                            }],
+                            itemStyle: item1
+                        }],
+                        itemStyle: item3
+                    }],
+                    itemStyle: item1
+                }, {
+                    children: [{
+                        value: 6,
+                        children: [{
+                            value: 1,
+                            itemStyle: item2
+                        }, {
+                            value: 2,
+                            children: [{
+                                value: 2,
+                                itemStyle: item2
+                            }],
+                            itemStyle: item1
+                        }, {
+                            value: 1,
+                            itemStyle: item3
+                        }],
+                        itemStyle: item3
+                    }, {
+                        value: 3,
+                        children: [{
+                            value: 1,
+                        }, {
+                            children: [{
+                                value: 1,
+                                itemStyle: item2
+                            }]
+                        }, {
+                            value: 1
+                        }],
+                        itemStyle: item3
+                    }],
+                    itemStyle: item1
+                }];
+
+                option = {
+                    series: {
+                        radius: ['15%', '80%'],
+                        type: 'sunburst',
+                        sort: null,
+                        highlightPolicy: 'ancestor',
+                        data: data,
+                        label: {
+                            rotate: 'radial'
+                        },
+                        levels: [],
+                        itemStyle: {
+                            color: '#ddd',
+                            borderWidth: 2
+                        }
+                    }
+                };
+
+                myChart.setOption(option);
+            }
+
+        </script>
+        <!-- =================================================================== -->
+
+        <!-- 漏斗图 -->
+        <div id="funnel" style="width: 600px;height:500px;"></div>
+        <script>
+            obj.funnel = function () {
+                var myChart = echarts.init($('#funnel'));
+
+                option = {
+                    title: {
+                        text: '漏斗图',
+                        subtext: '纯属虚构'
+                    },
+                    tooltip: {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c}%"
+                    },
+                    toolbox: {
+                        feature: {
+                            dataView: { readOnly: false },
+                            restore: {},
+                            saveAsImage: {}
+                        }
+                    },
+                    legend: {
+                        data: ['展现', '点击', '访问', '咨询', '订单']
+                    },
+
+                    series: [
+                        {
+                            name: '漏斗图',
+                            type: 'funnel',
+                            left: '10%',
+                            top: 60,
+                            //x2: 80,
+                            bottom: 60,
+                            width: '80%',
+                            // height: {totalHeight} - y - y2,
+                            min: 0,
+                            max: 100,
+                            minSize: '0%',
+                            maxSize: '100%',
+                            sort: 'descending',
+                            gap: 2,
+                            label: {
+                                show: true,
+                                position: 'inside'
+                            },
+                            labelLine: {
+                                length: 10,
+                                lineStyle: {
+                                    width: 1,
+                                    type: 'solid'
+                                }
+                            },
+                            itemStyle: {
+                                borderColor: '#fff',
+                                borderWidth: 1
+                            },
+                            emphasis: {
+                                label: {
+                                    fontSize: 20
+                                }
+                            },
+                            data: [
+                                { value: 60, name: '访问' },
+                                { value: 40, name: '咨询' },
+                                { value: 20, name: '订单' },
+                                { value: 80, name: '点击' },
+                                { value: 100, name: '展现' }
+                            ]
+                        }
+                    ]
+                }
+                myChart.setOption(option);
+            }
+
+        </script>
+    </div>
+
+</body>
+
+</html>

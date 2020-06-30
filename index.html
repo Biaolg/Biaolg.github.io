@@ -22,10 +22,38 @@
 			align-items: center;
 			position: relative;
 		}
-		.myimg{
+
+		.myimg {
 			width: 100%;
 			display: block;
 			/* position: absolute; */
+		}
+
+		.demo-list {
+			width: 100%;
+			background-color: #fff;
+			padding: 10px;
+			padding-left: 30px;
+			border-radius: 50px;
+			cursor: pointer;
+			cursor: hand;
+			margin-top: 20px;
+			text-align: center;
+			transition: all .3s;
+		}
+
+		.demo-list:hover {
+			/* border: 1px solid #282828; */
+			transform: scale(1.1);
+		}
+
+		a {
+			color: #000;
+		}
+
+		a:hover {
+			color: #000;
+			text-decoration: none;
 		}
 	</style>
 </head>
@@ -130,10 +158,11 @@
 	</section>
 
 	<!-- target="_blank" -->
+	<!-- 项目 -->
 	<section class="padding bg-grey" id="blog">
 		<div class="container">
 			<h2 class="section-title">项目展示</h2>
-			<p class="section-lead text-muted">这是我在学习期间实现的项目!</p>
+			<p class="section-lead text-muted">这是我在学习期间实现的简单的项目!</p>
 			<div class="section-body">
 				<div class="row col-spacing">
 
@@ -165,6 +194,23 @@
 										target="_blank">美丽说</a></h4>
 								<div class="text-right">
 									<a href="project/meilis/index.html" class="card-more" target="_blank">预览<i
+											class="ion-ios-arrow-right"></i></a>
+								</div>
+							</div>
+						</article>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4">
+						<article class="card">
+							<div class="myimg">
+								<img class="card-img-top" src="img/news/音乐可视化.jpg" alt="Article Image">
+							</div>
+							<div class="card-body">
+								<div class="card-subtitle mb-2 text-muted">canvas+aodioContext</div>
+								<h4 class="card-title"><a href="/project/Music-look/index.html" class="card-more"
+										target="_blank">音乐可视化</a></h4>
+								<div class="text-right">
+									<a href="/project/Music-look/index.html" class="card-more" target="_blank">预览<i
 											class="ion-ios-arrow-right"></i></a>
 								</div>
 							</div>
@@ -208,6 +254,23 @@
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
 							<div class="myimg">
+								<img class="card-img-top" src="img/news/BiaolgChat.jpg" alt="Article Image">
+							</div>
+							<div class="card-body">
+								<div class="card-subtitle mb-2 text-muted">vue</div>
+								<h4 class="card-title"><a href="/project/music-wyy/index.html" class="card-more"
+										target="_blank">BiaolgChat</a></h4>
+								<div class="text-right">
+									<a href="/project/biaolgchat/index.html" class="card-more" target="_blank">预览<i
+											class="ion-ios-arrow-right"></i></a>
+								</div>
+							</div>
+						</article>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4">
+						<article class="card">
+							<div class="myimg">
 								<img class="card-img-top" src="img/news/move.jpg" alt="Article Image">
 							</div>
 							<div class="card-body">
@@ -216,24 +279,6 @@
 										target="_blank">移动端天气预报</a></h4>
 								<div class="text-right">
 									<a href="/project/move-weather/index.html" class="card-more" target="_blank">预览<i
-											class="ion-ios-arrow-right"></i></a>
-								</div>
-							</div>
-						</article>
-					</div>
-
-
-					<div class="col-12 col-md-6 col-lg-4">
-						<article class="card">
-							<div class="myimg">
-								<img class="card-img-top" src="img/news/音乐可视化.jpg" alt="Article Image">
-							</div>
-							<div class="card-body">
-								<div class="card-subtitle mb-2 text-muted">canvas+aodioContext</div>
-								<h4 class="card-title"><a href="/project/Music-look/index.html" class="card-more"
-										target="_blank">音乐可视化</a></h4>
-								<div class="text-right">
-									<a href="/project/Music-look/index.html" class="card-more" target="_blank">预览<i
 											class="ion-ios-arrow-right"></i></a>
 								</div>
 							</div>
@@ -260,23 +305,6 @@
 					<div class="col-12 col-md-6 col-lg-4">
 						<article class="card">
 							<div class="myimg">
-								<img class="card-img-top" src="img/news/BiaolgChat.jpg" alt="Article Image">
-							</div>
-							<div class="card-body">
-								<div class="card-subtitle mb-2 text-muted">vue</div>
-								<h4 class="card-title"><a href="/project/music-wyy/index.html" class="card-more"
-										target="_blank">BiaolgChat</a></h4>
-								<div class="text-right">
-									<a href="/project/biaolgchat/index.html" class="card-more" target="_blank">预览<i
-											class="ion-ios-arrow-right"></i></a>
-								</div>
-							</div>
-						</article>
-					</div>
-
-					<div class="col-12 col-md-6 col-lg-4">
-						<article class="card">
-							<div class="myimg">
 								<img class="card-img-top" src="img/news/worldLink.jpg" alt="Article Image">
 							</div>
 							<div class="card-body">
@@ -290,7 +318,63 @@
 							</div>
 						</article>
 					</div>
+
+
 				</div>
+			</div>
+		</div>
+	</section>
+	<!-- demo -->
+	<section class="padding bg-grey">
+		<div class="container">
+			<h2 class="section-title">Demo</h2>
+			<p class="section-lead text-muted">demo list</p>
+			<a href="./project/demo/musicsheenUnit/index.html">
+				<div class="demo-list">
+					音乐可视化插件
+				</div>
+			</a>
+			<a href="./project/demo/EChartsz/index.html">
+				<div class="demo-list">
+					EChartsz
+				</div>
+			</a>
+			<a href="./project/demo/workrobot/index.html">
+				<div class="demo-list">
+					聊天机器人雏形
+				</div>
+			</a>
+			<a href="./project/demo/board/index.html">
+				<div class="demo-list">
+					画板
+				</div>
+			</a>
+			<a href="./project/demo/css3/transform.html">
+				<div class="demo-list">
+					CSS3transform练习
+				</div>
+			</a>
+			<a href="./project/demo/css3/chat.html">
+				<div class="demo-list">
+					CSS33D卡片
+				</div>
+			</a>
+			<a href="./project/demo/css3/sheendifference.html">
+				<div class="demo-list">
+					CSS3视差
+				</div>
+			</a>
+			<a href="./project/demo/game/gongge/index.html">
+				<div class="demo-list">
+					九宫格拼图小游戏
+				</div>
+			</a>
+			<a href="./project/demo/game/guss/index.html">
+				<div class="demo-list">
+					小游戏
+				</div>
+			</a>
+		</div>
 	</section>
 	<section class="bg-overlay padding" id="project" data-bg="img/projects.jpeg">
 		<div class="container">
@@ -323,7 +407,6 @@
 			</div>
 		</div>
 	</section>
-
 
 
 	<footer>

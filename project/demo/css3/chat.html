@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/minireset.css/0.0.2/minireset.css" />
+    <link rel="stylesheet" href="css/chat.min.css">
+</head>
+<body>
+    
+    <div class="box">
+        <h3>STEPS</h3>
+        <h4>THIS WEEK</h4>
+        <ul>
+            <li>
+                <span class="top">M</span>
+                <span class="left">20,000</span>
+            </li>
+            <li>
+                <span class="top">T</span>
+                <span class="left">10,000</span>
+            </li>
+            <li>
+                <span class="top">W</span>
+                <span class="left">15,000</span>
+            </li>
+            <li>
+                <span class="top">T</span>
+                <span class="left">24,100</span>
+            </li>
+            <li>
+                <span class="top">F</span>
+                <span class="left">7,000</span>
+            </li>
+            <li>
+                <span class="top">S</span>
+                <span class="left">7,000</span>
+            </li>
+            <li>
+                <span class="top">S</span>
+                <span class="left">10,000</span>
+            </li>
+        </ul>
+        <h5>93,000</h5>
+    </div>
+
+    <script>
+
+        window.onload=()=>{
+            document.querySelector('.box').onclick = function(){
+                this.classList.toggle('at');
+            }
+        }
+
+    </script>
+
+</body>
+</html>

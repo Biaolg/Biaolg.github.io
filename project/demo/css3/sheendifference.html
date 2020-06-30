@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        html {
+            height: 100%;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+        }
+
+        body {
+            height: 100%;
+            background-color: #222127;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 1000px;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        h1,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            margin: auto;
+            position: relative;
+            width: 300px;
+            height: 415px;
+            display: flex;
+            justify-content: center;
+            color: #fff;
+            perspective-origin: 50% 0;
+            transform-style: preserve-3d;
+            transform: rotateX(0deg) rotateY(0deg);
+            /* transition: all 1s; */
+        }
+
+        .box>div {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            pointer-events: none;
+            transform-style: preserve-3d;
+        }
+
+        .make {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .m-box {
+            margin: auto;
+            width: 80%;
+            height: 87%;
+            border: solid 2px #fff;
+            transform: translateZ(50px);
+        }
+
+        .m-box div {
+            padding: 30px;
+            position: absolute;
+            bottom: 5%;
+            transform: translateZ(60px);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box">
+        <img src="images/1.jpg">
+        <div class="make"></div>
+        <div class="m-box">
+            <div>
+                <h1>Tanya Bondesta</h1>
+                <p>Toronto</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let $ = (id) => document.querySelector(id);
+
+        window.onload = () => {
+
+            $('.box').onmousemove = function (e) {
+                this.style.transition = 'none';
+                let x = e.offsetX, y = e.offsetY;
+                let cx = this.offsetWidth / 2, cy = this.offsetHeight / 2;
+                let chaX = x - cx, chaY = cy - y;
+                let trX = chaX / 142 * 10;
+                let trY = chaY / 205.5 * 10;
+                this.style.transform = 'rotateX(' + trY + 'deg) rotateY(' + trX + 'deg)';
+            }
+            $('.box').onmouseleave = function () {
+                this.style.transition = 'all 1s';
+                this.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
